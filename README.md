@@ -1,6 +1,6 @@
-# history-navigation README
+# History Navigation
 
-This is the README for your extension "history-navigation". After writing up a brief description, we recommend including the following sections.
+Navigate back, forward and through the list of the last used editor easily with buttons.
 
 ## Features
 
@@ -8,58 +8,22 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+![Back](./media/lnr-arrow-left.svg)
+![Back](./media/lnr-arrow-left-white.svg)
+Go to the previous edit location
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+![Back](./media/lnr-arrow-right.svg)
+![Back](./media/lnr-arrow-right-white.svg)
+Go to the next edit location
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+![Back](./media/lnr-list.svg)
+![Back](./media/lnr-list-white.svg)
+Open the list of the last used editors
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+The commands appear only when an editor is opened.
 
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+First release of History Navigation. Commands enabled only in the Editor menu, not in the status bar (already implemented)

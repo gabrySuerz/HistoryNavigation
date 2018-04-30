@@ -1,0 +1,45 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'show', 'vsce', 'version' ]
+2 info using npm@3.5.2
+3 info using node@v4.2.6
+4 silly mapToRegistry name vsce
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry uri https://registry.npmjs.org/vsce
+8 verbose request uri https://registry.npmjs.org/vsce
+9 verbose request no auth needed
+10 info attempt registry request try #1 at 12:44:29 AM
+11 verbose request id 41fb088a77a65a3b
+12 verbose etag "5ac480d1-21d83"
+13 verbose lastModified Wed, 4 Apr 2018 7:37:53 GMT
+14 http request GET https://registry.npmjs.org/vsce
+15 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+16 info attempt registry request try #2 at 12:44:40 AM
+17 verbose etag "5ac480d1-21d83"
+18 verbose lastModified Wed, 4 Apr 2018 7:37:53 GMT
+19 http request GET https://registry.npmjs.org/vsce
+20 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN registry.npmjs.org:443
+21 info attempt registry request try #3 at 12:45:40 AM
+22 verbose etag "5ac480d1-21d83"
+23 verbose lastModified Wed, 4 Apr 2018 7:37:53 GMT
+24 http request GET https://registry.npmjs.org/vsce
+25 silly get cb [ 304, undefined ]
+26 verbose etag https://registry.npmjs.org/vsce from cache
+27 verbose get saving vsce to /home/gabriele/.npm/registry.npmjs.org/vsce/.cache.json
+28 verbose exit [ 0, true ]
+29 verbose stack Error: write EPIPE
+29 verbose stack     at Object.exports._errnoException (util.js:870:11)
+29 verbose stack     at exports._exceptionWithHostPort (util.js:893:20)
+29 verbose stack     at WriteWrap.afterWrite (net.js:763:14)
+30 verbose cwd /home/gabriele/repositories/history-navigation
+31 error Linux 4.13.0-37-generic
+32 error argv "/usr/bin/nodejs" "/usr/bin/npm" "show" "vsce" "version"
+33 error node v4.2.6
+34 error npm  v3.5.2
+35 error code EPIPE
+36 error errno EPIPE
+37 error syscall write
+38 error write EPIPE
+39 error If you need help, you may report this error at:
+39 error     <https://github.com/npm/npm/issues>
+40 verbose exit [ 1, true ]
