@@ -2,7 +2,7 @@
     "name": "history-navigation",
     "displayName": "History Navigation",
     "description": "Navigate through the list of the recent editors",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "gabry",
     "engines": {
         "vscode": "^1.21.0"
