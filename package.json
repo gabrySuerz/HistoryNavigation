@@ -18,7 +18,7 @@
         "commands": [
             {
                 "command": "extension.goToNextPoint",
-                "title": "Next",
+                "title": "3 - Next",
                 "icon":{
                     "light": "./media/lnr-arrow-right.svg",
                     "dark": "./media/lnr-arrow-right-white.svg"
@@ -26,7 +26,7 @@
             },
             {
                 "command": "extension.openEditorHistory",
-                "title": "History of Previous Editors",
+                "title": "2 - History of Previous Editors",
                 "icon":{
                     "light": "./media/lnr-list.svg",
                     "dark": "./media/lnr-list-white.svg"
@@ -34,7 +34,7 @@
             },
             {
                 "command": "extension.goToPreviousPoint",
-                "title": "a",
+                "title": "1 - Previous",
                 "icon":{
                     "light": "./media/lnr-arrow-left.svg",
                     "dark": "./media/lnr-arrow-left-white.svg"
