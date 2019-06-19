@@ -1,78 +1,91 @@
 {
-    "name": "history-navigation",
-    "displayName": "History Navigation",
-    "description": "Navigate through the list of the recent editors",
-    "version": "1.0.0",
-    "publisher": "gabry",
-    "engines": {
-        "vscode": "^1.21.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./out/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.goToNextPoint",
-                "title": "3 - Next",
-                "icon":{
-                    "light": "./media/lnr-arrow-right.svg",
-                    "dark": "./media/lnr-arrow-right-white.svg"
-                }
-            },
-            {
-                "command": "extension.openEditorHistory",
-                "title": "2 - History of Previous Editors",
-                "icon":{
-                    "light": "./media/lnr-list.svg",
-                    "dark": "./media/lnr-list-white.svg"
-                }
-            },
-            {
-                "command": "extension.goToPreviousPoint",
-                "title": "1 - Previous",
-                "icon":{
-                    "light": "./media/lnr-arrow-left.svg",
-                    "dark": "./media/lnr-arrow-left-white.svg"
-                }
-            }
-        ],
-        "menus": {
-            "editor/title": [
-                {
-                    "when": "editorFocus",
-                    "command": "extension.goToNextPoint",
-                    "group": "navigation"
-                },
-                {
-                    "when": "editorFocus",
-                    "command": "extension.openEditorHistory",
-                    "group": "navigation"
-                },
-                {
-                    "when": "editorFocus",
-                    "command": "extension.goToPreviousPoint",
-                    "group": "navigation"
-                }
-            ]
+  "name": "history-navigation",
+  "displayName": "History Navigation",
+  "description": "Navigate through the list of the recent editors",
+  "version": "1.0.0",
+  "publisher": "gabry",
+  "engines": {
+    "vscode": "^1.21.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "historynavigation.goToNextEditor",
+        "title": "4 - Next Editor",
+        "icon": {
+          "light": "./media/lnr-arrow-right.svg",
+          "dark": "./media/lnr-arrow-right-white.svg"
         }
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
-        "tslint": "^5.8.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+      },
+      {
+        "command": "historynavigation.openEditorHistory",
+        "title": "3 - History of Previous Editors",
+        "icon": {
+          "light": "./media/lnr-list.svg",
+          "dark": "./media/lnr-list-white.svg"
+        }
+      },
+      {
+        "command": "historynavigation.goToPreviousEditor",
+        "title": "2 - Previous editor",
+        "icon": {
+          "light": "./media/lnr-arrow-left.svg",
+          "dark": "./media/lnr-arrow-left-white.svg"
+        }
+      },
+      {
+        "command": "historynavigation.goToPreviousChange",
+        "title": "1 - Last Edit Location",
+        "icon": {
+          "light": "./media/lnr-arrow-left.svg",
+          "dark": "./media/lnr-arrow-left-white.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "textInputFocus",
+          "command": "historynavigation.goToNextEditor",
+          "group": "navigation"
+        },
+        {
+          "when": "textInputFocus",
+          "command": "historynavigation.openEditorHistory",
+          "group": "navigation"
+        },
+        {
+          "when": "textInputFocus",
+          "command": "historynavigation.goToPreviousEditor",
+          "group": "navigation"
+        },
+        {
+          "when": "textInputFocus",
+          "command": "historynavigation.goToPreviousChange",
+          "group": "navigation"
+        }
+      ]
     }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "tslint": "^5.8.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  }
 }

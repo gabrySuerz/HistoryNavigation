@@ -7,21 +7,26 @@ var opened = false
 
 export function activate(context: ExtensionContext) {
 	// creates the commands in the status bar
-	// createStatusBarHistoryControls(context)
-	// navigates to the last change in the page (not used)
-	context.subscriptions.push(commands.registerCommand('extension.goToPreviousChange', () => {
-		commands.executeCommand("workbench.action.editor.previousChange")
+  // createStatusBarHistoryControls(context)
+  
+	// navigates to the last change in the page
+	context.subscriptions.push(commands.registerCommand('historynavigation.goToPreviousChange', () => {
+		commands.executeCommand("workbench.action.navigateBack");
+	}));
+	// navigates to the next change in the page
+	context.subscriptions.push(commands.registerCommand('historynavigation.goToNextChange', () => {
+		commands.executeCommand("workbench.action.navigateForward");
 	}));
 	// go the previous opened editor
-	context.subscriptions.push(commands.registerCommand('extension.goToPreviousEditor', () => {
-		commands.executeCommand("workbench.action.navigateBack")
+	context.subscriptions.push(commands.registerCommand('historynavigation.goToPreviousEditor', () => {
+		commands.executeCommand("workbench.action.previousEditor");
 	}));
 	// go the next opened editor
-	context.subscriptions.push(commands.registerCommand('extension.goToNextEditor', () => {
-		commands.executeCommand("workbench.action.navigateForward")
+	context.subscriptions.push(commands.registerCommand('historynavigation.goToNextEditor', () => {
+		commands.executeCommand("workbench.action.nextEditor");
 	}));
 	// open the list of last used pages
-	context.subscriptions.push(commands.registerCommand('extension.openEditorHistory', () => {
+	context.subscriptions.push(commands.registerCommand('historynavigation.openEditorHistory', () => {
 		if (!opened) {
 			commands.executeCommand("workbench.action.openPreviousEditorFromHistory")
 			opened = true
@@ -34,19 +39,19 @@ export function activate(context: ExtensionContext) {
 // initialize the statusbar
 var createStatusBarHistoryControls = (context: ExtensionContext): void => {
 	const statusPrevious = window.createStatusBarItem(StatusBarAlignment.Right, 300);
-	statusPrevious.command = 'extension.goToPreviousEditor';
+	statusPrevious.command = 'historynavigation.goToPreviousEditor';
 	context.subscriptions.push(statusPrevious);
 
 	const statusPreviousList = window.createStatusBarItem(StatusBarAlignment.Right, 200);
-	statusPreviousList.command = 'extension.openEditorHistory';
+	statusPreviousList.command = 'historynavigation.openEditorHistory';
 	context.subscriptions.push(statusPreviousList);
 
 	const statusNext = window.createStatusBarItem(StatusBarAlignment.Right, 100);
-	statusNext.command = 'extension.goToNextEditor';
+	statusNext.command = 'historynavigation.goToNextEditor';
 	context.subscriptions.push(statusNext);
 
 	const statusPreviousChange = window.createStatusBarItem(StatusBarAlignment.Right, 400);
-	statusPreviousChange.command = 'extension.goToPreviousChange';
+	statusPreviousChange.command = 'historynavigation.goToPreviousChange';
 	context.subscriptions.push(statusPreviousChange);
 
 	updateStatus(statusPreviousChange, '$(arrow-left)');
