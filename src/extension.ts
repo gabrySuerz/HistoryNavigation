@@ -28,11 +28,11 @@ export function activate(context: ExtensionContext) {
 	// open the list of last used pages
 	context.subscriptions.push(commands.registerCommand('historynavigation.openEditorHistory', () => {
 		if (!opened) {
-			commands.executeCommand("workbench.action.openPreviousEditorFromHistory")
+			commands.executeCommand("workbench.action.openPreviousEditorFromHistory");
 			opened = true
 		} else {
 			opened = false
-			commands.executeCommand("workbench.action.closeQuickOpen")
+			commands.executeCommand("workbench.action.closeQuickOpen");
 		}
 	}));
 }

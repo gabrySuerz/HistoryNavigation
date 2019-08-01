@@ -8,22 +8,31 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
-![Back](./media/lnr-arrow-left.svg)
-![Back](./media/lnr-arrow-left-white.svg)
 Go to the previous edit location
 
-![Back](./media/lnr-arrow-right.svg)
-![Back](./media/lnr-arrow-right-white.svg)
 Go to the next edit location
 
-![Back](./media/lnr-list.svg)
-![Back](./media/lnr-list-white.svg)
 Open the list of the last used editors
 
 ## Release Notes
 
 The commands appear only when an editor is opened.
 
-### 1.0.0
+### 0.0.1
 
 First release of History Navigation. Commands enabled only in the Editor menu, not in the status bar (already implemented)
+
+### 0.0.2
+
+Changed the order of the buttons
+
+### 0.0.3
+
+- Changed the order of the buttons
+- Added new button **Last Edit Location**
+- Updated labels
+
+### 0.0.4
+
+- Added new button **Next Edit Location**
+- Updated labels
