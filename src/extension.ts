@@ -3,12 +3,11 @@
 import { ExtensionContext, StatusBarAlignment, window, StatusBarItem, commands } from 'vscode';
 
 // detect if the list is open or not
-var opened = false
+var opened = false;
 
 export function activate(context: ExtensionContext) {
 	// creates the commands in the status bar
-  // createStatusBarHistoryControls(context)
-  
+	// createStatusBarHistoryControls(context)
 	// navigates to the last change in the page
 	context.subscriptions.push(commands.registerCommand('historynavigation.goToPreviousChange', () => {
 		commands.executeCommand("workbench.action.navigateBack");
@@ -29,9 +28,9 @@ export function activate(context: ExtensionContext) {
 	context.subscriptions.push(commands.registerCommand('historynavigation.openEditorHistory', () => {
 		if (!opened) {
 			commands.executeCommand("workbench.action.openPreviousEditorFromHistory");
-			opened = true
+			opened = true;
 		} else {
-			opened = false
+			opened = false;
 			commands.executeCommand("workbench.action.closeQuickOpen");
 		}
 	}));
@@ -58,7 +57,7 @@ var createStatusBarHistoryControls = (context: ExtensionContext): void => {
 	updateStatus(statusPrevious, '$(arrow-left)');
 	updateStatus(statusPreviousList, '$(list-ordered)');
 	updateStatus(statusNext, '$(arrow-right)');
-}
+};
 // check if there is an icon and then if open or not
 var updateStatus = (status: StatusBarItem, text: string): void => {
 	if (text) {
@@ -70,7 +69,7 @@ var updateStatus = (status: StatusBarItem, text: string): void => {
 	} else {
 		status.hide();
 	}
-}
+};
 // check if there is history to show or not the commands
 var checkHistory = (status: StatusBarItem, command: string): void => {
 	let res = commands.executeCommand(command);
@@ -79,4 +78,4 @@ var checkHistory = (status: StatusBarItem, command: string): void => {
 	} else {
 		status.hide();
 	}
-}
+};

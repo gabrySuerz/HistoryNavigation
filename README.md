@@ -18,11 +18,11 @@ Open the list of the last used editors
 
 The commands appear only when an editor is opened.
 
-### 0.0.1
+### 0.0.1 (old 1.0.0)
 
 First release of History Navigation. Commands enabled only in the Editor menu, not in the status bar (already implemented)
 
-### 0.0.2
+### 0.0.2 (old 1.0.2)
 
 Changed the order of the buttons
 
@@ -36,3 +36,8 @@ Changed the order of the buttons
 
 - Added new button **Next Edit Location**
 - Updated labels
+
+### 1.0.0
+
+- Updated libraries and engine (supported VS Code from version 1.34.0)
+- Updated app name (delete the old application)
