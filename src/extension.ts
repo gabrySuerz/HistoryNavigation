@@ -78,7 +78,7 @@ var createStatusBarHistoryControls = (context: ExtensionContext): StatusBarItem[
 	statusNextChange.tooltip = 'Next Edit Location';
 	context.subscriptions.push(statusNextChange);
 
-	return [statusPrevious, statusNext, statusPreviousList, statusPreviousChange, statusNextChange];
+	return [statusPreviousChange, statusPrevious, statusPreviousList, statusNext, statusNextChange].reverse();
 };
 
 var openWidgetBySettings = (statusList: StatusBarItem[], dictionary: { [key: string]: string }): void => {
