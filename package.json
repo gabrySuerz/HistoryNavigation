@@ -1,8 +1,8 @@
 {
-  "name": "history-navigation",
+  "name": "historynavigation",
   "displayName": "History Navigation",
   "description": "Navigate through the list of the recent editors",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "gabry",
   "engines": {
     "vscode": "^1.34.0"
@@ -15,10 +15,25 @@
   ],
   "main": "./out/extension",
   "contributes": {
+    "configuration": {
+      "title": "History Navigation",
+      "properties": {
+        "historynavigation.viewMode": {
+          "type": "string",
+          "default": "Navigation bar",
+          "enum": [
+            "Navigation bar",
+            "Context menu",
+            "Status bar"
+          ],
+          "description": "Choose where visualize the widget."
+        }
+      }
+    },
     "commands": [
       {
         "command": "historynavigation.goToNextChange",
-        "title": "5 - Next Edit Location",
+        "title": "Next Edit Location",
         "icon": {
           "light": "./media/lnr-arrow-right.svg",
           "dark": "./media/lnr-arrow-right-white.svg"
@@ -26,7 +41,7 @@
       },
       {
         "command": "historynavigation.goToNextEditor",
-        "title": "4 - Next Editor",
+        "title": "Next Editor",
         "icon": {
           "light": "./media/lnr-arrow-right.svg",
           "dark": "./media/lnr-arrow-right-white.svg"
@@ -34,7 +49,7 @@
       },
       {
         "command": "historynavigation.openEditorHistory",
-        "title": "3 - History of Previous Editors",
+        "title": "History of Previous Editors",
         "icon": {
           "light": "./media/lnr-list.svg",
           "dark": "./media/lnr-list-white.svg"
@@ -42,7 +57,7 @@
       },
       {
         "command": "historynavigation.goToPreviousEditor",
-        "title": "2 - Previous editor",
+        "title": "Previous Editor",
         "icon": {
           "light": "./media/lnr-arrow-left.svg",
           "dark": "./media/lnr-arrow-left-white.svg"
@@ -50,7 +65,7 @@
       },
       {
         "command": "historynavigation.goToPreviousChange",
-        "title": "1 - Previous Edit Location",
+        "title": "Previous Edit Location",
         "icon": {
           "light": "./media/lnr-arrow-left.svg",
           "dark": "./media/lnr-arrow-left-white.svg"
@@ -60,29 +75,54 @@
     "menus": {
       "editor/title": [
         {
-          "when": "textInputFocus",
+          "when": "extensionEnabled.navigation",
           "command": "historynavigation.goToNextChange",
-          "group": "navigation"
+          "group": "navigation@100000005"
         },
         {
-          "when": "textInputFocus",
+          "when": "extensionEnabled.navigation",
           "command": "historynavigation.goToNextEditor",
-          "group": "navigation"
+          "group": "navigation@100000004"
         },
         {
-          "when": "textInputFocus",
+          "when": "extensionEnabled.navigation",
           "command": "historynavigation.openEditorHistory",
-          "group": "navigation"
+          "group": "navigation@100000003"
         },
         {
-          "when": "textInputFocus",
+          "when": "extensionEnabled.navigation",
           "command": "historynavigation.goToPreviousEditor",
-          "group": "navigation"
+          "group": "navigation@100000002"
         },
         {
-          "when": "textInputFocus",
+          "when": "extensionEnabled.navigation",
           "command": "historynavigation.goToPreviousChange",
-          "group": "navigation"
+          "group": "navigation@100000001"
+        },
+        {
+          "when": "extensionEnabled.contextMenu",
+          "command": "historynavigation.goToNextChange",
+          "group": "z_commands@100000005"
+        },
+        {
+          "when": "extensionEnabled.contextMenu",
+          "command": "historynavigation.goToNextEditor",
+          "group": "z_commands@100000004"
+        },
+        {
+          "when": "extensionEnabled.contextMenu",
+          "command": "historynavigation.openEditorHistory",
+          "group": "z_commands@100000003"
+        },
+        {
+          "when": "extensionEnabled.contextMenu",
+          "command": "historynavigation.goToPreviousEditor",
+          "group": "z_commands@100000002"
+        },
+        {
+          "when": "extensionEnabled.contextMenu",
+          "command": "historynavigation.goToPreviousChange",
+          "group": "z_commands@100000001"
         }
       ]
     }

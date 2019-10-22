@@ -41,3 +41,10 @@ Changed the order of the buttons
 
 - Updated libraries and engine (supported VS Code from version 1.34.0)
 - Updated app name (delete the old application)
+
+### 1.1.0
+
+- Navigation menu showed in last position
+- ***NEW*** Status bar widget
+- ***NEW*** Context menu widget
+- Setting to check which type of widget is enabled
