@@ -45,6 +45,11 @@ export function activate(context: ExtensionContext) {
 	};
 
 	openWidgetBySettings(statusList, dictionary);
+
+	workspace.onDidChangeConfiguration(e => {
+		configuration = workspace.getConfiguration('historynavigation');
+		openWidgetBySettings(statusList, dictionary);
+	});
 }
 // initialize the statusbar
 var createStatusBarHistoryControls = (context: ExtensionContext): StatusBarItem[] => {
