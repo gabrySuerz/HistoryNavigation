@@ -48,3 +48,7 @@ Changed the order of the buttons
 - ***NEW*** Status bar widget
 - ***NEW*** Context menu widget
 - Setting to check which type of widget is enabled
+
+### 1.2.0
+
+- ***NEW*** Sync menu with active editor

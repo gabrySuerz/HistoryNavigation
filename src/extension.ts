@@ -7,6 +7,11 @@ var opened = false;
 var configuration = workspace.getConfiguration('historynavigation');
 
 export function activate(context: ExtensionContext) {
+	// show current open editor in sidebar
+	context.subscriptions.push(commands.registerCommand('historynavigation.linkEditorToMenu', () => {
+		commands.executeCommand('workbench.files.action.showActiveFileInExplorer');
+	}));
+
 	// navigates to the last change in the page
 	context.subscriptions.push(commands.registerCommand('historynavigation.goToPreviousChange', () => {
 		commands.executeCommand('workbench.action.navigateBack');

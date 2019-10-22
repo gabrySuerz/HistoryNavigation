@@ -2,7 +2,7 @@
   "name": "historynavigation",
   "displayName": "History Navigation",
   "description": "Navigate through the list of the recent editors",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "gabry",
   "engines": {
     "vscode": "^1.34.0"
@@ -32,48 +32,60 @@
     },
     "commands": [
       {
+        "command": "historynavigation.linkEditorToMenu",
+        "title": "Sync menu with active editor",
+        "icon": {
+          "light": "./media/exchange.svg",
+          "dark": "./media/exchange-alt.svg"
+        }
+      },
+      {
         "command": "historynavigation.goToNextChange",
         "title": "Next Edit Location",
         "icon": {
-          "light": "./media/lnr-arrow-right.svg",
-          "dark": "./media/lnr-arrow-right-white.svg"
+          "light": "./media/arrow-right.svg",
+          "dark": "./media/arrow-right-alt.svg"
         }
       },
       {
         "command": "historynavigation.goToNextEditor",
         "title": "Next Editor",
         "icon": {
-          "light": "./media/lnr-arrow-right.svg",
-          "dark": "./media/lnr-arrow-right-white.svg"
+          "light": "./media/arrow-right.svg",
+          "dark": "./media/arrow-right-alt.svg"
         }
       },
       {
         "command": "historynavigation.openEditorHistory",
         "title": "History of Previous Editors",
         "icon": {
-          "light": "./media/lnr-list.svg",
-          "dark": "./media/lnr-list-white.svg"
+          "light": "./media/list.svg",
+          "dark": "./media/list-alt.svg"
         }
       },
       {
         "command": "historynavigation.goToPreviousEditor",
         "title": "Previous Editor",
         "icon": {
-          "light": "./media/lnr-arrow-left.svg",
-          "dark": "./media/lnr-arrow-left-white.svg"
+          "light": "./media/arrow-left.svg",
+          "dark": "./media/arrow-left-alt.svg"
         }
       },
       {
         "command": "historynavigation.goToPreviousChange",
         "title": "Previous Edit Location",
         "icon": {
-          "light": "./media/lnr-arrow-left.svg",
-          "dark": "./media/lnr-arrow-left-white.svg"
+          "light": "./media/arrow-left.svg",
+          "dark": "./media/arrow-left-alt.svg"
         }
       }
     ],
     "menus": {
       "editor/title": [
+        {
+          "command": "historynavigation.linkEditorToMenu",
+          "group": "navigation@100000006"
+        },
         {
           "when": "extensionEnabled.navigation",
           "command": "historynavigation.goToNextChange",
